@@ -2,24 +2,23 @@
 :root {
     --white: #F8FAFC;
     --black: #1B1B1E;
-    --background-color: #BAE1DB;
+    --background-color: #FFF8DC;
     --light-red: #FDA4AF; 
     --dark-red: #FF506E;
     --skin: #FED7AA;
     --light-wood: #E08E45;
     --dark-wood: #64230D;
+    --very-light-blue: #E0FFFF;
     --light-blue: #BBE6E4;
     --dark-blue: #053760;
     --bright-yellow: #FFCA27;
     --bright-orange: #FF822C;
     --bright-red: #EA3F45;
     --box-shadow: 0 6px 6px hsl(0deg 0% 0% / 0.3);
-    
 }
 
 html {
     font-size: 62.5%; 
-    
 }
 
 /* reset defaults and initializes counter */
@@ -27,12 +26,12 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.6rem;
     counter-reset: score 0; 
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: var(--skin);
-    height: 100vh;
-    width: 100vw;
+    background-color: var(--background-color);
+    height: auto;
+    width: auto;
     display: grid;
     place-items: center;
 }
@@ -48,22 +47,32 @@ body {
 }
 
 
-
+/* removes frame for small screens */
 @media only screen and (max-width: 420px) {
-    body .main-container {
+    body .phone-frame {
         border: none;
         height: 100vh;
         box-shadow: none;
+        margin: 0;
     }
     
 }
-.main-container {
+
+.phone-frame {
     border: 16px solid var(--black);
     border-radius: 40px;
     display: grid;
     width: 375px;
     height: 812px;
+    margin: 24px auto;
     box-shadow: var(--box-shadow);
     justify-content: center;
-    align-content: center;
+    align-content: center;  
+    background-color: var(--very-light-blue);   
+}
+
+.main-container {
+    border: 2px solid red;
+    width: 375px;
+    height: 720px;
 }
