@@ -15,26 +15,34 @@
     --bright-orange: #FF822C;
     --bright-red: #EA3F45;
     --box-shadow: 0 6px 6px hsl(0deg 0% 0% / 0.3);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-    font-size: 62.5%; 
+    font-size: 62.5%;
+    counter-reset: score 0;
 }
 
 /* reset defaults and initializes counter */
 body {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.6rem;
-    counter-reset: score 0; 
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    height: auto;
-    width: auto;
+    margin: 0px;
+    padding: 0px;
+    
     display: grid;
     place-items: center;
-}
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--background-color);
+
+     
+    }
 
 /* checkbox increments the score and hides itself */
 .main-container input:checked {
@@ -42,37 +50,45 @@ body {
     /* visibility: hidden; */
 }
 
+
 .scoreboard-counter::after {
     content: counter(score);
-}
+ }
 
 
 /* removes frame for small screens */
 @media only screen and (max-width: 420px) {
     body .phone-frame {
-        border: none;
+        display: none;
+    }
+
+    body .main-container {
+        width: 100vw;
         height: 100vh;
-        box-shadow: none;
-        margin: 0;
+        border-radius: 0;
     }
     
 }
 
 .phone-frame {
+    
+    box-sizing: border-box;
+    width: 320px;
+    height: 620px; 
+     
+    position: absolute; 
     border: 16px solid var(--black);
     border-radius: 40px;
-    display: grid;
-    width: 375px;
-    height: 812px;
-    margin: 24px auto;
-    box-shadow: var(--box-shadow);
-    justify-content: center;
-    align-content: center;  
-    background-color: var(--very-light-blue);   
+    box-shadow: var(--box-shadow); 
+    background-color: none;
 }
 
 .main-container {
     border: 2px solid red;
-    width: 375px;
-    height: 720px;
+    border-radius: 50px;
+    overflow: hidden;
+    width: 320px;
+    height: 620px;
+    padding: 24px;
+    box-sizing: border-box;
 }
