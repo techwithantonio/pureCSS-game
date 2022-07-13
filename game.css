@@ -7,7 +7,7 @@
     --dark-red: #FF506E;
     --skin: #FED7AA;
     --light-wood: #E08E45;
-    --dark-wood: #64230D;
+    --dark-wood: #b07037;
     --very-light-blue: #E0FFFF;
     --light-blue: #44bcf2;
     --dark-blue: #0c71c4;
@@ -100,7 +100,7 @@ body {
 }
 
 /* wooden background - layer 2 */
-.background-container {
+.background {
     height: 80%;
     width: 100%;
 
@@ -109,6 +109,12 @@ body {
     z-index: 2;
 
     background-color: var(--light-wood);
+
+}
+
+.background div {
+    width: 5%;
+    background-color: var(--dark-wood);
 
 }
 
@@ -272,6 +278,18 @@ body {
     box-shadow: 0 -6px 6px hsl(0deg 0% 0% / 0.1); 
 }
 
+.foreground, .background {
+    display: flex;
+    justify-content: space-evenly;
+}
+.foreground div{
+    width: 10%;
+    background-color: var(--light-red)
+
+}
+
+
+/* shows scoreboard */
 .scoreboard-container {
     
     height: 10%;
@@ -287,6 +305,7 @@ body {
 
 }
 
+/* inputs are used as targets */
 input[type="checkbox"] {
     opacity: 0.1;  
 }
@@ -307,6 +326,7 @@ input[type="checkbox"] {
     height: 20px;
 }
 
+/* ducks are evenly distributed */
 .duck-container {
     display: flex;
     justify-content: space-evenly;
@@ -316,6 +336,15 @@ input[type="checkbox"] {
     
 }
 
+.duck {
+    background-color: var(--bright-yellow);
+    width: auto;
+    height: inherit;
+    border-radius: 50px;
+    box-shadow: var(--box-shadow);
+}
+
+/* animations */
 .duck-container {
     transform: translateX(10%);
 }
@@ -323,12 +352,5 @@ input[type="checkbox"] {
 .duck-container:hover {
     transform: translateX(-10%);
     transition-duration: 0.5s;
-}
-
-.duck {
-    background-color: var(--bright-yellow);
-    width: auto;
-    height: inherit;
-    border-radius: 50px;
-    box-shadow: var(--box-shadow);
+    transition-delay: 0.1s;
 }
