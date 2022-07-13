@@ -2,20 +2,20 @@
 :root {
     --white: #F8FAFC;
     --black: #1B1B1E;
-    --background-color: #FFF8DC;
+    --background-color: #E0FFFF;
     --light-red: #FDA4AF; 
     --dark-red: #FF506E;
     --skin: #FED7AA;
     --light-wood: #E08E45;
     --dark-wood: #64230D;
     --very-light-blue: #E0FFFF;
-    --light-blue: #BBE6E4;
-    --dark-blue: #053760;
+    --light-blue: #44bcf2;
+    --dark-blue: #0c71c4;
     --bright-yellow: #FFCA27;
     --bright-orange: #FF822C;
     --bright-red: #EA3F45;
     --box-shadow: 0 6px 6px hsl(0deg 0% 0% / 0.3);
-    --border-radius: 16px 16px 0px 0px;
+    --border-radius: 8px 8px 0px 0px;
 }
 
 html {
@@ -116,35 +116,88 @@ body {
 .back-track-container {
     
     height: 60%;
-    width: 60%;
+    width: 50%;
     bottom: 10%;
-    margin-left: 20%;
+    margin-left: 25%;
     
     position: absolute;
     z-index: 3;
     
-    background-color: var(--light-blue);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow); 
+    /* border: 2px solid white; */
 
 }
+
+/* back track rail */
+.back-track-dark {
+    height: 80%;
+    width: 100%;
+    bottom: 0%;
+    margin-left: 0%;
+    
+    position: absolute;
+    z-index: 1;
+
+    background-color: var(--dark-blue);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow); 
+}
+
+/* back track rail */
+.back-track-light {
+    height: 76.5%;
+    width: 100%;
+    bottom: 0%;
+    margin-left: 0%;
+    
+    position: absolute;
+    z-index: 2;
+
+    background-color: var(--light-blue);
+}
+
 
 /* middle track area - layer 4 */
 .middle-track-container {
     
     height: 40%;
-    width: 70%;
+    width: 65%;
     bottom: 10%;
-    margin-left: 15%;
+    margin-left: 17.5%;
     
     position: absolute;
     z-index: 4;
     
-    background-color: var(--light-red);
-    box-shadow: var(--box-shadow); 
-    border-radius: var(--border-radius);
+    /* border: 2px solid white; */
 
 }
+
+/* middle track rail */
+.middle-track-dark {
+    height: 70%;
+    width: 100%;
+    bottom: 0%;
+    margin-left: 0%;
+    
+    position: absolute;
+    z-index: 2;
+
+    background-color: var(--dark-blue);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow); 
+}
+/* middle track rail */
+.middle-track-light {
+    height: 65%;
+    width: 100%;
+    bottom: 0%;
+    margin-left: 0%;
+    
+    position: absolute;
+    z-index: 2;
+
+    background-color: var(--light-blue); 
+}
+
 
 /* front track area - layer 5 */
 .front-track-container {
@@ -157,11 +210,37 @@ body {
     position: absolute;
     z-index: 5;
     
-    background-color: var(--white);
+    /* border: 2px solid white; */
+}
+
+/* front track rail */
+.front-track-dark {
+    height: 40%;
+    width: 100%;
+    bottom: 0%;
+    margin-left: 0%;
+    
+    position: absolute;
+    z-index: 1;
+
+    background-color: var(--dark-blue);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow); 
+}
+
+/* front track rail */
+.front-track-light {
+    height: 30%;
+    width: 100%;
+    bottom: 0%;
+    margin-left: 0%;
+    position: absolute;
+    z-index: 2;
+    background-color: var(--light-blue);
+
 
 }
+
 
 /* foreground area - layer 6 */
 .foreground-top {
@@ -204,7 +283,20 @@ body {
     z-index: 7;
     
     background-color: var(--dark-red);
-    box-shadow: var(--box-shadow); 
     border-radius: 16px;
 
+}
+
+input[type="checkbox"] {
+    width: 40px;
+    height: 40px;
+    border-radius: 24px;
+    opacity: 0.5;
+}
+
+.duck-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    border: 2px solid red;
 }
