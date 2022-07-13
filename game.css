@@ -288,15 +288,47 @@ body {
 }
 
 input[type="checkbox"] {
+    opacity: 0.1;  
+}
+
+
+.front-track-container input[type="checkbox"] {
     width: 40px;
     height: 40px;
-    border-radius: 24px;
-    opacity: 0.5;
+}
+
+.middle-track-container input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+}
+
+.back-track-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
 }
 
 .duck-container {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    border: 2px solid red;
+    height: 100%;
+    margin-top: 24px;
+    
+}
+
+.duck-container {
+    transform: translateX(10%);
+}
+
+.duck-container:hover {
+    transform: translateX(-10%);
+    transition-duration: 0.5s;
+}
+
+.duck {
+    background-color: var(--bright-yellow);
+    width: auto;
+    height: inherit;
+    border-radius: 50px;
+    box-shadow: var(--box-shadow);
 }
